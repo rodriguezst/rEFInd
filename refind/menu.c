@@ -425,13 +425,13 @@ static UINTN RunGenericMenu(IN REFIT_MENU_SCREEN *Screen, IN MENU_STYLE_FUNC Sty
         // react to key press
         switch (key.ScanCode) {
             case SCAN_UP:
-                UpdateScroll(&State, SCROLL_LINE_UP);
+                UpdateScroll(&State, SCROLL_LINE_LEFT);
                 break;
             case SCAN_LEFT:
                 UpdateScroll(&State, SCROLL_LINE_LEFT);
                 break;
             case SCAN_DOWN:
-                UpdateScroll(&State, SCROLL_LINE_DOWN);
+                UpdateScroll(&State, SCROLL_LINE_RIGHT);
                 break;
             case SCAN_RIGHT:
                 UpdateScroll(&State, SCROLL_LINE_RIGHT);
@@ -443,10 +443,10 @@ static UINTN RunGenericMenu(IN REFIT_MENU_SCREEN *Screen, IN MENU_STYLE_FUNC Sty
                 UpdateScroll(&State, SCROLL_LAST);
                 break;
             case SCAN_PAGE_UP:
-                UpdateScroll(&State, SCROLL_PAGE_UP);
+                UpdateScroll(&State, SCROLL_LINE_LEFT);
                 break;
             case SCAN_PAGE_DOWN:
-                UpdateScroll(&State, SCROLL_PAGE_DOWN);
+                UpdateScroll(&State, SCROLL_LINE_RIGHT);
                 break;
             case SCAN_ESC:
                 MenuExit = MENU_EXIT_ESCAPE;
